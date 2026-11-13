@@ -1,0 +1,14 @@
+Working paper update for https://github.com/teejuun123-dev/foreignworker
+
+1. Extract this ZIP.
+2. Open the repository on GitHub, on the main branch, at its root.
+3. Select Add file > Upload files.
+4. Drag the extracted docs and files FOLDERS into the upload area. DO NOT drag the enclosing extraction folder.
+5. Confirm these paths appear:
+   docs/research.html (updated)
+   docs/files/robust-estimation-paper.pdf (new)
+   files/robust-estimation-paper.pdf (new source PDF)
+6. Commit changes. The configured GitHub Pages deployment should update.
+7. Browse to https://teejuun123-dev.github.io/foreignworker/research.html
+
+GitHub doesn't run Python. These generated docs/ files are already ready for GitHub Pages.
