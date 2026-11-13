@@ -20,7 +20,7 @@
       <div class="social-links">
         {% if profile.scholar %}<a href="{{ profile.scholar }}">Google Scholar</a>{% endif %}
         {% if profile.github %}<a href="{{ profile.github }}">GitHub</a>{% endif %}
-        {% if profile.linkedin %}<a href="{{ profile.linkedin }}">LinkedIn</a>{% endif %}
+        {% if profile.linkedin %}<a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
       </div>
     {% endif %}
   </aside>
@@ -50,6 +50,17 @@
       </div>
     </section>
     {% endif %}
+
+    {% for paper in papers if paper.category == 'Working Paper' and paper.pdf_available %}
+    <section class="section-block" aria-labelledby="working-paper-heading">
+      <h2 id="working-paper-heading">Working Paper</h2>
+      <h3><a href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">{{ paper.title }} ↗</a></h3>
+      <p class="muted">{{ paper.authors }}{% if paper.year %} ({{ paper.year }}){% endif %}</p>
+      <div class="resource-links">
+        <a class="button button-outline" href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">Open working paper (PDF) ↗</a>
+      </div>
+    </section>
+    {% endfor %}
 
     <section class="section-block" aria-labelledby="explore-heading">
       <h2 id="explore-heading">Explore My Work</h2>

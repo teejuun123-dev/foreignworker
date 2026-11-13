@@ -9,11 +9,11 @@
     <h2 class="category-heading">{{ category }}</h2>
     {% for paper in papers if paper.category == category %}
     <article class="paper-listing">
-      <h3>{{ paper.title }}</h3>
+      <h3>{% if paper.pdf_available %}<a href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer" title="Open PDF: {{ paper.title }}">{{ paper.title }} ↗</a>{% else %}{{ paper.title }}{% endif %}</h3>
       <p class="muted">{{ paper.authors }}{% if paper.year %} ({{ paper.year }}){% endif %}</p>
       {% if paper.abstract %}<p>{{ paper.abstract }}</p>{% endif %}
       <div class="resource-links">
-        {% if paper.pdf_available %}<a href="{{ paper.pdf }}">Paper (PDF) ↗</a>{% endif %}
+        {% if paper.pdf_available %}<a class="button button-solid" href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">Open paper (PDF) ↗</a>{% endif %}
         {% if paper.slides_available %}<a href="{{ paper.slides }}">Slides (PDF) ↗</a>{% endif %}
         {% if paper.featured %}<a href="jobmarket.html">Job market materials →</a>{% endif %}
       </div>

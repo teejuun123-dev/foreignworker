@@ -29,7 +29,7 @@
   <footer class="site-footer">
     <div class="footer-shell">
       <span>© {{ current_year }} {{ profile.name }} · {{ profile.university }}</span>
-      <span><a href="mailto:{{ profile.email }}">Email</a>{% if profile.github %} · <a href="{{ profile.github }}">GitHub</a>{% endif %}{% if profile.linkedin %} · <a href="{{ profile.linkedin }}">LinkedIn</a>{% endif %}</span>
+      <span><a href="mailto:{{ profile.email }}">Email</a>{% if profile.github %} · <a href="{{ profile.github }}">GitHub</a>{% endif %}{% if profile.linkedin %} · <a href="{{ profile.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}</span>
     </div>
   </footer>
 </body>

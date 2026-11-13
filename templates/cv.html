@@ -1,55 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="content-page">
-  <p class="eyebrow">Academic background</p>
-  <h1>Curriculum Vitae</h1>
-  <p class="page-intro">{{ profile.name }} · {{ profile.role }} · {{ profile.university }}</p>
+<div class="content-page cv-download-only">
   {% if cv_available %}
-    <p><a class="button button-solid" href="files/cv.pdf" download>Download CV (PDF) ↓</a></p>
+    <a class="button button-solid" href="files/cv.pdf" download>Download CV (PDF) ↓</a>
   {% else %}
-    <div class="notice">To add a downloadable CV, place a public-safe PDF at <code>files/cv.pdf</code> and run <code>build.py</code> again.</div>
-  {% endif %}
-  <section class="cv-section">
-    <h2>Education</h2>
-    {% for item in education %}
-    <div class="cv-entry"><div><strong>{{ item.degree }}</strong><br><span class="muted">{{ item.university }}{% if item.detail %} · {{ item.detail }}{% endif %}</span></div><span class="term">{{ item.period }}</span></div>
-    {% endfor %}
-  </section>
-  <section class="cv-section">
-    <h2>Professional Experience</h2>
-    {% for item in experience %}
-    <div class="cv-entry"><div><strong>{{ item.title }}</strong><br><span class="muted">{{ item.organisation }}</span></div><span class="term">{{ item.period }}</span></div>
-    {% endfor %}
-  </section>
-  <section class="cv-section">
-    <h2>Awards, Fellowships &amp; Grants</h2>
-    {% for item in awards %}
-    <div class="cv-entry"><div><strong>{{ item.name }}</strong><br><span class="muted">{{ item.provider }}</span></div><span class="term">{{ item.period }}</span></div>
-    {% endfor %}
-  </section>
-  <section class="cv-section">
-    <h2>Presentations</h2>
-    {% for item in presentations %}
-    <div class="cv-entry"><div><strong>{{ item.event }}</strong><br><span class="muted">{{ item.title }}</span></div><span class="term">{{ item.date }}</span></div>
-    {% endfor %}
-  </section>
-  <section class="cv-section">
-    <h2>Programming Skills</h2>
-    <p>{{ skills | join(' · ') }}</p>
-  </section>
-  <section class="cv-section">
-    <h2>References</h2>
-    <div class="reference-grid">
-      {% for ref in references %}
-        <div class="reference"><strong>{{ ref.name }}</strong><br><span class="muted">{{ ref.title }}<br>{{ ref.organisation }}</span><br><a href="mailto:{{ ref.email }}">{{ ref.email }}</a></div>
-      {% endfor %}
-    </div>
-  </section>
-  {% if cv_available %}
-  <section class="cv-section">
-    <h2>Full CV (PDF preview)</h2>
-    <iframe class="cv-frame" title="Curriculum Vitae PDF" src="files/cv.pdf"></iframe>
-  </section>
+    <p class="notice">Add a CV at <code>files/cv.pdf</code> and run <code>build.py</code> to enable the download.</p>
   {% endif %}
 </div>
 {% endblock %}

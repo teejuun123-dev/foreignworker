@@ -114,3 +114,6 @@ code { padding: 2px 5px; background: #f1f1f1; border-radius: 4px; font-size: .9e
   .cv-entry .term { font-size: .8rem; }
   .reference-grid { grid-template-columns: 1fr; }
 }
+
+/* CV page: show just the download button. */
+.cv-download-only { display: flex; justify-content: center; padding-top: 72px; padding-bottom: 110px; }
