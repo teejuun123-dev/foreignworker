@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-page">
+  <p class="eyebrow">Academic background</p>
+  <h1>Curriculum Vitae</h1>
+  <p class="page-intro">{{ profile.name }} · {{ profile.role }} at {{ profile.university }}.</p>
+  {% if cv_available %}
+  <p><a class="button button-solid" href="files/cv.pdf" download>Download CV (PDF) ↓</a></p>
+  <iframe class="cv-frame" title="Curriculum Vitae PDF" src="files/cv.pdf"></iframe>
+  {% else %}
+  <div class="notice">To enable a downloadable CV, add your PDF as <code>files/cv.pdf</code> and run <code>python build.py</code> again.</div>
+  {% endif %}
+  <section class="section-block">
+    <h2>Contact</h2>
+    <p><a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+  </section>
+</div>
+{% endblock %}

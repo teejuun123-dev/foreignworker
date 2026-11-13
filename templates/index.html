@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="home-grid">
+  <aside class="profile-panel">
+    {% if photo_available %}
+      <img class="profile-photo" src="assets/profile.jpg" alt="Portrait of {{ profile.name }}">
+    {% else %}
+      <div class="profile-photo placeholder-photo" aria-label="Profile photo placeholder"><span>{{ profile.name[:1] }}</span><small>Add static/profile.jpg</small></div>
+    {% endif %}
+    <h1>{{ profile.name }}</h1>
+    <p class="role">{{ profile.role }}</p>
+    <p class="institution">{{ profile.department }}<br>{{ profile.university }}</p>
+    <a class="email-link" href="mailto:{{ profile.email }}">{{ profile.email }}</a>
+    {% if profile.location %}<p class="location">{{ profile.location }}</p>{% endif %}
+    <div class="profile-actions">
+      <a class="button button-solid" href="jobmarket.html">Job Market Paper</a>
+      <a class="button button-outline" href="cv.html">Curriculum Vitae</a>
+    </div>
+    {% if profile.scholar or profile.github or profile.linkedin %}
+      <div class="social-links">
+        {% if profile.scholar %}<a href="{{ profile.scholar }}">Google Scholar</a>{% endif %}
+        {% if profile.github %}<a href="{{ profile.github }}">GitHub</a>{% endif %}
+        {% if profile.linkedin %}<a href="{{ profile.linkedin }}">LinkedIn</a>{% endif %}
+      </div>
+    {% endif %}
+  </aside>
+
+  <div class="home-content">
+    <p class="eyebrow">Academic Homepage</p>
+    <h2 class="welcome-title">Welcome to my website</h2>
+    <p class="lead">{{ profile.bio }}</p>
+
+    <section class="section-block" aria-labelledby="interests-heading">
+      <h2 id="interests-heading">Research Interests</h2>
+      <p>{{ profile.interests | join(' · ') }}</p>
+    </section>
+
+    {% if featured_paper %}
+    <section class="section-block" aria-labelledby="jmb-heading">
+      <h2 id="jmb-heading">Job Market Paper</h2>
+      <div class="featured-paper">
+        <p class="paper-kicker">{{ featured_paper.category }} · {{ featured_paper.year }}</p>
+        <h3><a href="jobmarket.html">{{ featured_paper.title }}</a></h3>
+        <p class="muted">{{ featured_paper.authors }}</p>
+        <p>{{ featured_paper.abstract }}</p>
+        <div class="resource-links">
+          <a href="jobmarket.html">Abstract and details →</a>
+          {% if featured_paper.pdf_available %}<a href="{{ featured_paper.pdf }}">Download PDF ↗</a>{% endif %}
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="section-block" aria-labelledby="explore-heading">
+      <h2 id="explore-heading">Explore My Work</h2>
+      <div class="explore-cards">
+        <a class="explore-card" href="research.html"><strong>Research →</strong><span>Working papers and research in progress.</span></a>
+        <a class="explore-card" href="teaching.html"><strong>Teaching →</strong><span>Courses, experience, and teaching materials.</span></a>
+        <a class="explore-card" href="cv.html"><strong>Curriculum Vitae →</strong><span>Academic background and downloadable CV.</span></a>
+      </div>
+    </section>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ profile.name }} — {{ profile.role }} at {{ profile.university }}. Research, job market paper, teaching, and CV.">
+  <title>{{ page_title }} | {{ profile.name }}</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="site-brand" href="index.html">{{ profile.name }}</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" {% if active_page == 'home' %}aria-current="page"{% endif %}>Home</a>
+        <a href="jobmarket.html" {% if active_page == 'jobmarket' %}aria-current="page"{% endif %}>Job Market</a>
+        <a href="research.html" {% if active_page == 'research' %}aria-current="page"{% endif %}>Research</a>
+        <a href="teaching.html" {% if active_page == 'teaching' %}aria-current="page"{% endif %}>Teaching</a>
+        <a href="cv.html" {% if active_page == 'cv' %}aria-current="page"{% endif %}>CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-shell">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-shell">
+      <span>© {{ current_year }} {{ profile.name }} · {{ profile.university }}</span>
+      <span><a href="mailto:{{ profile.email }}">Email</a>{% if profile.github %} · <a href="{{ profile.github }}">GitHub</a>{% endif %}{% if profile.linkedin %} · <a href="{{ profile.linkedin }}">LinkedIn</a>{% endif %}</span>
+    </div>
+  </footer>
+</body>
+</html>

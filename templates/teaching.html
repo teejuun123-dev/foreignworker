@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-page">
+  <p class="eyebrow">Teaching & mentorship</p>
+  <h1>Teaching</h1>
+  <p class="page-intro">Selected teaching experience. Edit the course information in <code>build.py</code>.</p>
+  <div class="teaching-list">
+  {% for item in teaching %}
+    <article class="teaching-item">
+      <div><h2>{{ item.course }}</h2><p class="muted">{{ item.role }} · {{ item.institution }}</p></div>
+      <span class="term">{{ item.term }}</span>
+    </article>
+  {% endfor %}
+  </div>
+</div>
+{% endblock %}

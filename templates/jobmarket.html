@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-page">
+  <p class="eyebrow">2026–2027 academic job market</p>
+  <h1>Job Market</h1>
+  <p class="page-intro">My primary research paper and application materials.</p>
+  {% if featured_paper %}
+  <article class="paper-detail">
+    <span class="tag">Job Market Paper</span>
+    <h2>{{ featured_paper.title }}</h2>
+    <p class="muted">{{ featured_paper.authors }} · {{ featured_paper.year }}</p>
+    <h3>Abstract</h3>
+    <p>{{ featured_paper.abstract }}</p>
+    <div class="download-actions">
+      {% if featured_paper.pdf_available %}<a class="button button-solid" href="{{ featured_paper.pdf }}">Download paper (PDF)</a>{% endif %}
+      {% if featured_paper.slides_available %}<a class="button button-outline" href="{{ featured_paper.slides }}">Presentation slides</a>{% endif %}
+      {% if cv_available %}<a class="button button-outline" href="files/cv.pdf">Download CV</a>{% else %}<a class="button button-outline" href="cv.html">CV and contact</a>{% endif %}
+    </div>
+  </article>
+  {% endif %}
+  <section class="section-block">
+    <h2>Contact</h2>
+    <p>For enquiries and interviews, please contact me at <a href="mailto:{{ profile.email }}">{{ profile.email }}</a>.</p>
+  </section>
+</div>
+{% endblock %}
