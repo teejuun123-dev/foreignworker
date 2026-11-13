@@ -1,14 +1,15 @@
-Working paper update for https://github.com/teejuun123-dev/foreignworker
+CV page restore for https://github.com/teejuun123-dev/foreignworker
 
-1. Extract this ZIP.
-2. Open the repository on GitHub, on the main branch, at its root.
-3. Select Add file > Upload files.
-4. Drag the extracted docs and files FOLDERS into the upload area. DO NOT drag the enclosing extraction folder.
-5. Confirm these paths appear:
-   docs/research.html (updated)
-   docs/files/robust-estimation-paper.pdf (new)
-   files/robust-estimation-paper.pdf (new source PDF)
-6. Commit changes. The configured GitHub Pages deployment should update.
-7. Browse to https://teejuun123-dev.github.io/foreignworker/research.html
+Only changed files plus the CV PDFs are included. Drag the CONTENTS of the extracted ZIP onto your repository's root upload screen on branch main, commit, and refresh:
+https://teejuun123-dev.github.io/foreignworker/cv.html
 
-GitHub doesn't run Python. These generated docs/ files are already ready for GitHub Pages.
+Included:
+  docs/cv.html             (updated live CV page)
+  docs/assets/styles.css  (CV styles)
+  docs/files/cv.pdf        (downloadable public CV without home address / phone)
+  templates/cv.html        (Jinja2 CV page template for future builds)
+  static/styles.css       (CSS source for future builds)
+  files/cv.pdf             (PDF source for future builds)
+  build.py                 (source data; retains LinkedIn, Spring/Autumn and paper link)
+
+The complete site package is also provided separately. Do not delete any current repository files.

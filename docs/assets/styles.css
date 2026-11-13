@@ -117,3 +117,15 @@ code { padding: 2px 5px; background: #f1f1f1; border-radius: 4px; font-size: .9e
 
 /* CV page: show just the download button. */
 .cv-download-only { display: flex; justify-content: center; padding-top: 72px; padding-bottom: 110px; }
+
+/* CV page: expanded academic history and downloadable PDF */
+.cv-full-page .cv-toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 10px; }
+.cv-full-page .cv-research-heading { color: var(--burgundy); font-size: 1.08rem; margin: 24px 0 8px; }
+.cv-full-page .cv-paper-entry { padding: 8px 0 12px; line-height: 1.7; }
+.cv-full-page .cv-paper-entry a { color: var(--burgundy); }
+.cv-full-page .cv-paper-download { font-size: .88rem; margin-top: 4px; }
+.cv-full-page .cv-frame { min-height: 820px; }
+@media (max-width: 520px) {
+  .cv-full-page .cv-toolbar { flex-direction: column; }
+  .cv-full-page .cv-frame { min-height: 610px; }
+}
