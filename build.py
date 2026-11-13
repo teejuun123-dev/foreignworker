@@ -39,12 +39,13 @@ PROFILE = {
         "and the estimation of structural change points."
     ),
     "github": "https://github.com/teejuun123-dev",
-    "linkedin": "",  # Add a real LinkedIn URL only if you have one.
+    "linkedin": "https://www.linkedin.com/in/taejun-kim-a234b7149/",
     "scholar": "",   # Add a real Google Scholar URL only if you have one.
 }
 
-# The CV supplies these titles and author lists but no abstracts or public PDF URLs.
-# To activate a PDF button, place the file at the exact relative path shown.
+# Papers use locally hosted PDFs where supplied. The working-paper PDF is included
+# at files/robust-estimation-paper.pdf. Other download buttons only appear when
+# you place PDFs at the exact relative paths specified below.
 PAPERS = [
     {
         "title": "Recursive Subsample Testing for Co-Explosivity Breakdowns",
@@ -81,17 +82,17 @@ PAPERS = [
     },
 ]
 
-# Term strings are retained exactly as in your CV (S = spring; F = autumn).
+# Spell out terms on the teaching webpage (S = Spring; F = Autumn).
 TEACHING = [
-    {"code": "ECON2006", "course": "Applied Econometrics 2", "role": "Tutorial", "institution": "University of Nottingham", "term": "2027-S"},
-    {"code": "ECON1069", "course": "Mathematical Economics", "role": "Tutorial", "institution": "University of Nottingham", "term": "2026-F"},
-    {"code": "ECON1044", "course": "Mathematical Economics and Econometrics", "role": "Tutorial", "institution": "University of Nottingham", "term": "2026-S"},
-    {"code": "ECON2005", "course": "Applied Econometrics 1", "role": "Tutorial", "institution": "University of Nottingham", "term": "2025-F"},
-    {"code": "ECON2006", "course": "Applied Econometrics 2", "role": "Tutorial", "institution": "University of Nottingham", "term": "2025-S"},
-    {"code": "ECON2050", "course": "Econometric Theory 2", "role": "Tutorial", "institution": "University of Nottingham", "term": "2025-S"},
-    {"code": "ECON2005", "course": "Applied Econometrics 1", "role": "Computer Lab", "institution": "University of Nottingham", "term": "2024-F"},
-    {"code": "ECON2006", "course": "Applied Econometrics 2", "role": "Computer Lab", "institution": "University of Nottingham", "term": "2024-S"},
-    {"code": "ECON2005", "course": "Applied Econometrics 1", "role": "Tutorial", "institution": "University of Nottingham", "term": "2023-F"},
+    {"code": "ECON2006", "course": "Applied Econometrics 2", "role": "Tutorial", "institution": "University of Nottingham", "term": "2027-Spring"},
+    {"code": "ECON1069", "course": "Mathematical Economics", "role": "Tutorial", "institution": "University of Nottingham", "term": "2026-Autumn"},
+    {"code": "ECON1044", "course": "Mathematical Economics and Econometrics", "role": "Tutorial", "institution": "University of Nottingham", "term": "2026-Spring"},
+    {"code": "ECON2005", "course": "Applied Econometrics 1", "role": "Tutorial", "institution": "University of Nottingham", "term": "2025-Autumn"},
+    {"code": "ECON2006", "course": "Applied Econometrics 2", "role": "Tutorial", "institution": "University of Nottingham", "term": "2025-Spring"},
+    {"code": "ECON2050", "course": "Econometric Theory 2", "role": "Tutorial", "institution": "University of Nottingham", "term": "2025-Spring"},
+    {"code": "ECON2005", "course": "Applied Econometrics 1", "role": "Computer Lab", "institution": "University of Nottingham", "term": "2024-Autumn"},
+    {"code": "ECON2006", "course": "Applied Econometrics 2", "role": "Computer Lab", "institution": "University of Nottingham", "term": "2024-Spring"},
+    {"code": "ECON2005", "course": "Applied Econometrics 1", "role": "Tutorial", "institution": "University of Nottingham", "term": "2023-Autumn"},
 ]
 
 EDUCATION = [
