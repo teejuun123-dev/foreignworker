@@ -15,6 +15,7 @@
     <div class="download-actions">
       {% if featured_paper.pdf_available %}<a class="button button-solid" href="{{ featured_paper.pdf }}">Download paper (PDF)</a>{% endif %}
       {% if featured_paper.slides_available %}<a class="button button-outline" href="{{ featured_paper.slides }}">Presentation slides</a>{% endif %}
+      {% if featured_paper.code is defined and featured_paper.code %}<a class="button button-solid" href="{{ featured_paper.code }}" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a>{% endif %}
       {% if cv_available %}<a class="button button-outline" href="files/cv.pdf">Download CV</a>{% else %}<a class="button button-outline" href="cv.html">CV and contact</a>{% endif %}
     </div>
   </article>

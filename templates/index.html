@@ -45,6 +45,7 @@
         <p>{{ featured_paper.abstract }}</p>
         <div class="resource-links">
           <a href="jobmarket.html">Abstract and details →</a>
+          {% if featured_paper.code is defined and featured_paper.code %}<a class="button button-outline" href="{{ featured_paper.code }}" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a>{% endif %}
           {% if featured_paper.pdf_available %}<a href="{{ featured_paper.pdf }}">Download PDF ↗</a>{% endif %}
         </div>
       </div>
