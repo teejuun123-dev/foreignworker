@@ -4,18 +4,22 @@
   <p class="eyebrow">Academic research</p>
   <h1>Research</h1>
   <p class="page-intro">My research interests include {{ profile.interests | join(', ') }}.</p>
-  {% for paper in papers %}
-  <article class="paper-listing">
-    <p class="paper-kicker">{{ paper.category }} · {{ paper.year }}</p>
-    <h2>{{ paper.title }}</h2>
-    <p class="muted">{{ paper.authors }}</p>
-    <p>{{ paper.abstract }}</p>
-    <div class="resource-links">
-      {% if paper.pdf_available %}<a href="{{ paper.pdf }}">Paper (PDF) ↗</a>{% endif %}
-      {% if paper.slides_available %}<a href="{{ paper.slides }}">Slides (PDF) ↗</a>{% endif %}
-      {% if paper.featured %}<a href="jobmarket.html">Job market materials →</a>{% endif %}
-    </div>
-  </article>
+  {% for category in ['Job Market Paper', 'Working Paper', 'Work in Progress'] %}
+  <section class="research-category">
+    <h2 class="category-heading">{{ category }}</h2>
+    {% for paper in papers if paper.category == category %}
+    <article class="paper-listing">
+      <h3>{{ paper.title }}</h3>
+      <p class="muted">{{ paper.authors }}{% if paper.year %} ({{ paper.year }}){% endif %}</p>
+      {% if paper.abstract %}<p>{{ paper.abstract }}</p>{% endif %}
+      <div class="resource-links">
+        {% if paper.pdf_available %}<a href="{{ paper.pdf }}">Paper (PDF) ↗</a>{% endif %}
+        {% if paper.slides_available %}<a href="{{ paper.slides }}">Slides (PDF) ↗</a>{% endif %}
+        {% if paper.featured %}<a href="jobmarket.html">Job market materials →</a>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </section>
   {% endfor %}
 </div>
 {% endblock %}

@@ -97,3 +97,20 @@ code { padding: 2px 5px; background: #f1f1f1; border-radius: 4px; font-size: .9e
   .teaching-item { flex-direction: column; gap: 5px; }
   .download-actions .button { width: 100%; }
 }
+/* Research sections and detailed CV additions */
+.category-heading { font-size: 1.35rem; padding-bottom: 11px; border-bottom: 1px solid var(--hairline); margin: 38px 0 4px; }
+.research-category:first-of-type .category-heading { margin-top: 15px; }
+.paper-listing { border-top: 0; padding: 20px 0 10px; }
+.paper-listing h3 { font-size: 1.24rem; margin-bottom: 9px; }
+.paper-listing .resource-links:empty { display: none; }
+.cv-section { margin-top: 44px; border-top: 1px solid var(--hairline); padding-top: 26px; }
+.cv-entry { display: flex; justify-content: space-between; gap: 20px; padding: 12px 0; border-bottom: 1px solid #f0f0f0; }
+.cv-entry > div { min-width: 0; }
+.cv-entry .muted { display: inline-block; font-size: .9rem; margin-top: 3px; }
+.reference-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 28px; }
+.reference { font-size: .92rem; overflow-wrap: anywhere; }
+@media (max-width: 520px) {
+  .cv-entry { flex-direction: column; gap: 1px; }
+  .cv-entry .term { font-size: .8rem; }
+  .reference-grid { grid-template-columns: 1fr; }
+}
