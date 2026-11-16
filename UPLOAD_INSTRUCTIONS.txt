@@ -1,15 +1,27 @@
-CV page restore for https://github.com/teejuun123-dev/foreignworker
+UPDATE WORKING PAPER ON GITHUB PAGES — 16 NOVEMBER 2026
 
-Only changed files plus the CV PDFs are included. Drag the CONTENTS of the extracted ZIP onto your repository's root upload screen on branch main, commit, and refresh:
-https://teejuun123-dev.github.io/foreignworker/cv.html
+Repository: https://github.com/teejuun123-dev/foreignworker
+Branch: main
+Website: https://teejuun123-dev.github.io/foreignworker/
 
-Included:
-  docs/cv.html             (updated live CV page)
-  docs/assets/styles.css  (CV styles)
-  docs/files/cv.pdf        (downloadable public CV without home address / phone)
-  templates/cv.html        (Jinja2 CV page template for future builds)
-  static/styles.css       (CSS source for future builds)
-  files/cv.pdf             (PDF source for future builds)
-  build.py                 (source data; retains LinkedIn, Spring/Autumn and paper link)
+This package contains exactly two copies of the updated 58-page manuscript:
+  docs/files/robust-estimation-paper.pdf   <- published GitHub Pages PDF
+  files/robust-estimation-paper.pdf        <- source copy for future builds in Spyder
 
-The complete site package is also provided separately. Do not delete any current repository files.
+HOW TO UPLOAD
+1. Extract this ZIP locally (do not upload the ZIP as a single file).
+2. In your GitHub repository, open main and select Add file > Upload files.
+3. Drag the two FOLDERS 'docs' and 'files' from the extracted folder into the upload area.
+4. Check that the paths shown are docs/files/robust-estimation-paper.pdf
+   and files/robust-estimation-paper.pdf (no extra enclosing folder).
+5. Commit changes to main, using the message:
+   Update working paper to 16 November 2026 version
+6. Wait for the GitHub Pages workflow in Actions to finish successfully.
+7. Open https://teejuun123-dev.github.io/foreignworker/files/robust-estimation-paper.pdf
+   and confirm the title page reads November 16, 2026.
+
+WHY NO HTML CHANGES?
+Your existing research page already links to files/robust-estimation-paper.pdf.
+Keeping the same file path updates the PDF without altering your page design,
+CV, profile photo, or other links. If a browser shows the earlier PDF, refresh
+with Ctrl+Shift+R or add ?v=20261116 to the paper URL.
