@@ -63,6 +63,9 @@
         {% else %}
         <a class="button button-outline" href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">Open working paper (PDF) ↗</a>
         {% endif %}
+        {% if paper.code is defined and paper.code %}
+        <a class="button button-outline" href="{{ paper.code }}" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a>
+        {% endif %}
       </div>
     </section>
     {% endfor %}

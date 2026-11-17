@@ -4,14 +4,10 @@
   <p class="eyebrow">Academic background</p>
   <h1>Curriculum Vitae</h1>
   <p class="page-intro">{{ profile.name }} · {{ profile.role }} · {{ profile.university }}</p>
-  {% if cv_available %}
     <div class="cv-toolbar">
-      <a class="button button-solid" href="files/cv.pdf" download>Download CV (PDF) ↓</a>
-      <a class="button button-outline" href="files/cv.pdf" target="_blank" rel="noopener noreferrer">View CV (PDF) ↗</a>
+      <a class="button button-solid" href="https://drive.google.com/uc?export=download&amp;id=1peuKnUWDfce03uCHSuPCeDYzaaOVr_I0" target="_blank" rel="noopener noreferrer">Download CV (PDF) ↓</a>
+      <a class="button button-outline" href="https://drive.google.com/file/d/1peuKnUWDfce03uCHSuPCeDYzaaOVr_I0/view?usp=sharing" target="_blank" rel="noopener noreferrer">View CV (PDF) ↗</a>
     </div>
-  {% else %}
-    <p class="notice">To enable the PDF download, add <code>files/cv.pdf</code> and rerun <code>build.py</code> in Spyder.</p>
-  {% endif %}
 
   <section class="cv-section" aria-labelledby="education-heading">
     <h2 id="education-heading">Education</h2>
@@ -39,9 +35,16 @@
       <h3 class="cv-research-heading">{{ category }}</h3>
       {% for paper in papers if paper.category == category %}
         <div class="cv-paper-entry">
-          <strong>{% if paper.pdf_available %}<a href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">{{ paper.title }} ↗</a>{% else %}{{ paper.title }}{% endif %}</strong><br>
+          <strong>{% if category == 'Working Paper' %}<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7692000" target="_blank" rel="noopener noreferrer">{{ paper.title }} ↗</a>{% else %}{{ paper.title }}{% endif %}</strong><br>
           <span class="muted">{{ paper.authors }}{% if paper.year %} ({{ paper.year }}){% endif %}</span>
-          {% if paper.pdf_available %}<div class="cv-paper-download"><a href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">Paper (PDF) ↗</a></div>{% endif %}
+          {% if category == 'Job Market Paper' %}
+          <div class="cv-paper-download"><a href="https://github.com/teejuun123-dev/recursive-coexplosivity-breakdowns" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a></div>
+          {% elif category == 'Working Paper' %}
+          <div class="cv-paper-download">
+            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7692000" target="_blank" rel="noopener noreferrer">Paper (SSRN) ↗</a>
+            <a href="https://github.com/teejuun123-dev/sBIC_level_shift" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a>
+          </div>
+          {% endif %}
         </div>
       {% endfor %}
     {% endfor %}
@@ -95,12 +98,10 @@
     </div>
   </section>
 
-  {% if cv_available %}
     <section class="cv-section" aria-labelledby="preview-heading">
       <h2 id="preview-heading">CV Preview (PDF)</h2>
-      <iframe class="cv-frame" title="Curriculum Vitae PDF preview" loading="lazy" src="files/cv.pdf"></iframe>
-      <p class="muted">If the PDF preview does not appear, use the download link at the top of this page.</p>
+      <iframe class="cv-frame" title="Curriculum Vitae PDF preview" loading="lazy" src="https://drive.google.com/file/d/1peuKnUWDfce03uCHSuPCeDYzaaOVr_I0/preview" allowfullscreen></iframe>
+      <p class="muted">If the preview is unavailable, select “View CV (PDF)” above to open Google Drive.</p>
     </section>
-  {% endif %}
 </div>
 {% endblock %}
