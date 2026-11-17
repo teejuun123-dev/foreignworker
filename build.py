@@ -68,6 +68,7 @@ PAPERS = [
         "abstract": "",
         "pdf": "",   # Use the published SSRN page rather than a local PDF.
         "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7692000",
+        "code": "https://github.com/teejuun123-dev/sBIC_level_shift",
         "slides": "",
         "featured": False,
     },

@@ -1,24 +1,23 @@
-TEACHING TERM FIX — GitHub Pages
+# Working Paper Code Link — GitHub Pages Update
 
-This update replaces abbreviations in all teaching dates:
-  -S => -Spring
-  -F => -Autumn
+Adds the sBIC_level_shift GitHub repository to the Working Paper on the Home, Research and CV pages.
 
-HOW TO UPLOAD:
-1. Unzip this file. Open the extracted folder.
-2. In GitHub, open https://github.com/teejuun123-dev/foreignworker
-3. Confirm the main branch is selected.
-4. Choose Add file > Upload files.
-5. Drag the *contents* of this folder (docs, templates, build.py).
-6. Commit changes to main.
-7. After Pages finishes publishing, refresh the Teaching page.
+Working Paper code: https://github.com/teejuun123-dev/sBIC_level_shift
+Working Paper SSRN: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7692000
 
-IMPORTANT: GitHub Pages serves docs/teaching.html. Editing only
-Python files will not update the published site until you regenerate
-the HTML and upload it.
+## For the published website (GitHub Pages)
+Replace these three files in the `foreignworker` repository on `main`:
+- `docs/index.html`
+- `docs/research.html`
+- `docs/cv.html`
 
-The build.py in this package is the personalised version, so that
-future runs in Spyder generate the full teaching terms. It also
-includes the latest research and LinkedIn profile information.
+## To keep the changes when rebuilding locally with Spyder
+Also replace the corresponding source files:
+- `build.py`
+- `templates/index.html`
+- `templates/research.html`
+- `templates/cv.html`
 
-Do not upload the top-level container folder itself.
+The ZIP contains all seven updated files with their paths preserved. Existing Google Drive CV and Job Market Paper links remain unchanged. No PDF files are modified.
+
+Changes are not published automatically; commit the updated files to GitHub.
