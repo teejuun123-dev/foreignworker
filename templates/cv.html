@@ -38,7 +38,10 @@
           <strong>{% if category == 'Working Paper' %}<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7692000" target="_blank" rel="noopener noreferrer">{{ paper.title }} ↗</a>{% else %}{{ paper.title }}{% endif %}</strong><br>
           <span class="muted">{{ paper.authors }}{% if paper.year %} ({{ paper.year }}){% endif %}</span>
           {% if category == 'Job Market Paper' %}
-          <div class="cv-paper-download"><a href="https://github.com/teejuun123-dev/recursive-coexplosivity-breakdowns" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a></div>
+          <div class="cv-paper-download">
+            <a href="{{ paper.paper_url }}" target="_blank" rel="noopener noreferrer">PDF (Google Drive) ↗</a>
+            <a href="https://github.com/teejuun123-dev/recursive-coexplosivity-breakdowns" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a>
+          </div>
           {% elif category == 'Working Paper' %}
           <div class="cv-paper-download">
             <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7692000" target="_blank" rel="noopener noreferrer">Paper (SSRN) ↗</a>

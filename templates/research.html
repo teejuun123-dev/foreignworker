@@ -9,11 +9,11 @@
     <h2 class="category-heading">{{ category }}</h2>
     {% for paper in papers if paper.category == category %}
     <article class="paper-listing">
-      <h3>{% if paper.ssrn_available %}<a href="{{ paper.ssrn }}" target="_blank" rel="noopener noreferrer" title="View on SSRN: {{ paper.title }}">{{ paper.title }} ↗</a>{% elif paper.pdf_available %}<a href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer" title="Open PDF: {{ paper.title }}">{{ paper.title }} ↗</a>{% else %}{{ paper.title }}{% endif %}</h3>
+      <h3>{% if paper.paper_url is defined and paper.paper_url %}<a href="{{ paper.paper_url }}" target="_blank" rel="noopener noreferrer" title="View PDF: {{ paper.title }}">{{ paper.title }} ↗</a>{% elif paper.ssrn_available %}<a href="{{ paper.ssrn }}" target="_blank" rel="noopener noreferrer" title="View on SSRN: {{ paper.title }}">{{ paper.title }} ↗</a>{% elif paper.pdf_available %}<a href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer" title="Open PDF: {{ paper.title }}">{{ paper.title }} ↗</a>{% else %}{{ paper.title }}{% endif %}</h3>
       <p class="muted">{{ paper.authors }}{% if paper.year %} ({{ paper.year }}){% endif %}</p>
       {% if paper.abstract %}<p>{{ paper.abstract }}</p>{% endif %}
       <div class="resource-links">
-        {% if paper.ssrn_available %}<a class="button button-solid" href="{{ paper.ssrn }}" target="_blank" rel="noopener noreferrer">View on SSRN ↗</a>{% elif paper.pdf_available %}<a class="button button-solid" href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">Open paper (PDF) ↗</a>{% endif %}
+        {% if paper.paper_url is defined and paper.paper_url %}<a class="button button-solid" href="{{ paper.paper_url }}" target="_blank" rel="noopener noreferrer">PDF (Google Drive) ↗</a>{% elif paper.ssrn_available %}<a class="button button-solid" href="{{ paper.ssrn }}" target="_blank" rel="noopener noreferrer">View on SSRN ↗</a>{% elif paper.pdf_available %}<a class="button button-solid" href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">Open paper (PDF) ↗</a>{% endif %}
         {% if paper.slides_available %}<a href="{{ paper.slides }}">Slides (PDF) ↗</a>{% endif %}
         {% if paper.code is defined and paper.code %}<a class="button button-outline" href="{{ paper.code }}" target="_blank" rel="noopener noreferrer">Code (GitHub) ↗</a>{% endif %}
         {% if paper.featured %}<a href="jobmarket.html">Job market materials →</a>{% endif %}
