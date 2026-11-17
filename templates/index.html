@@ -52,13 +52,17 @@
     </section>
     {% endif %}
 
-    {% for paper in papers if paper.category == 'Working Paper' and paper.pdf_available %}
+    {% for paper in papers if paper.category == 'Working Paper' and (paper.ssrn_available or paper.pdf_available) %}
     <section class="section-block" aria-labelledby="working-paper-heading">
       <h2 id="working-paper-heading">Working Paper</h2>
-      <h3><a href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">{{ paper.title }} ↗</a></h3>
+      <h3><a href="{{ paper.ssrn if paper.ssrn_available else paper.pdf }}" target="_blank" rel="noopener noreferrer">{{ paper.title }} ↗</a></h3>
       <p class="muted">{{ paper.authors }}{% if paper.year %} ({{ paper.year }}){% endif %}</p>
       <div class="resource-links">
+        {% if paper.ssrn_available %}
+        <a class="button button-outline" href="{{ paper.ssrn }}" target="_blank" rel="noopener noreferrer">View working paper on SSRN ↗</a>
+        {% else %}
         <a class="button button-outline" href="{{ paper.pdf }}" target="_blank" rel="noopener noreferrer">Open working paper (PDF) ↗</a>
+        {% endif %}
       </div>
     </section>
     {% endfor %}

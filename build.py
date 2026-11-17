@@ -43,9 +43,8 @@ PROFILE = {
     "scholar": "",   # Add a real Google Scholar URL only if you have one.
 }
 
-# Papers use locally hosted PDFs where supplied. The working-paper PDF is included
-# at files/robust-estimation-paper.pdf. Other download buttons only appear when
-# you place PDFs at the exact relative paths specified below.
+# Papers may link to SSRN or local PDFs. The Working Paper uses SSRN.
+# Other local PDF links only appear when a corresponding file exists.
 PAPERS = [
     {
         "title": "Recursive Subsample Testing for Co-Explosivity Breakdowns",
@@ -67,7 +66,8 @@ PAPERS = [
         "year": "2026",
         "category": "Working Paper",
         "abstract": "",
-        "pdf": "files/robust-estimation-paper.pdf",
+        "pdf": "",   # Use the published SSRN page rather than a local PDF.
+        "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7692000",
         "slides": "",
         "featured": False,
     },
@@ -165,6 +165,7 @@ def build() -> None:
             entry[f"{field}_available"] = bool(
                 entry[field] and (OUTPUT / entry[field]).is_file()
             )
+        entry["ssrn_available"] = bool(entry.get("ssrn", ""))
         papers.append(entry)
 
     featured_paper = next((p for p in papers if p["featured"]), None)
