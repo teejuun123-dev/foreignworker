@@ -51,6 +51,7 @@ PAPERS = [
         "authors": "Taejun Kim",
         "year": "2026",
         "category": "Job Market Paper",
+        "paper_url": "https://drive.google.com/file/d/1rCjl1uoClClzIveW8x3iBroIBQDiQ9-v/view?usp=drive_link",
         "code": "https://github.com/teejuun123-dev/recursive-coexplosivity-breakdowns",
         "abstract": "",  # Paste your approved abstract here, if desired.
         "pdf": "files/job-market-paper.pdf",
